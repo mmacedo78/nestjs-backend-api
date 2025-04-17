@@ -1,6 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
-import { Purchase } from 'src/purchase/entities/purchase.entity';
+
 
 @Entity()
 export class User {
@@ -36,6 +36,5 @@ export class User {
   @ApiProperty({ description: 'The last update date of the user record' })
   updatedAt: Date;
 
-  @OneToMany(() => Purchase, (purchase) => purchase.user)
-  purchases: Purchase[];
+
 }
