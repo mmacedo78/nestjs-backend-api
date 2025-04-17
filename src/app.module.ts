@@ -5,7 +5,7 @@ import { PurchaseModule } from './purchase/purchase.module';
 import { CategoryModule } from './category/category.module';
 
 
-@Module({
+@Module({  
   imports: [UserModule, ProductModule, PurchaseModule, CategoryModule],
   controllers: [],
   providers: [],
