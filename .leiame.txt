@@ -1,0 +1,63 @@
+## criar projeto
+nest new nestjs-backend-api
+
+## criar estrutura
+# Usuarios
+nest g module user
+nest g service user --no-spec
+nest g controller user --no-spec
+
+# Usuarios - utilizar o gerador
+nest g res users --no-spec
+
+# Segurança JWT
+nest g module auth
+nest g service auth --no-spec
+nest g controller auth --no-spec
+
+# Product
+nest g module product
+nest g service product --no-spec
+nest g controller product --no-spec
+
+# Purchase
+nest g module purchase
+nest g service purchase --no-spec
+nest g controller purchase --no-spec
+
+# Category
+nest g module category
+nest g service category --no-spec
+nest g controller category --no-spec
+
+## Dependencias
+# Conectando com o banco
+npm install --save typeorm @nestjs/typeorm pg
+
+# Utilizar parametros de configuração
+npm install --save @nestjs/config
+
+# Utilizar validação dos dados
+npm install --save class-validator 
+npm install --save class-transformer
+
+# Utilizar JWT
+npm install --save @nestjs/jwt
+
+# Para mapear os mesmo tipos de estruturas
+npm install --save @nestjs/mapped-types
+
+# Utilizar helmet para proteger vulnerabilidade da Web
+npm install --save helmet
+
+# Instalar o Swagger
+npm install --save @nestjs/swagger
+
+# Instalar seviço soap
+npm install --save nestjs-soap
+
+# Instalar serviço criptografia
+npm install --save bcrypt
+
+## Executar aplicação - dev
+npm run start:dev
