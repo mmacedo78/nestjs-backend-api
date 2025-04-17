@@ -1,4 +1,20 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreatePurchaseDto } from './create-purchase.dto';
+import { ApiProperty } from '@nestjs/swagger';
+import { IsEnum, IsOptional, IsString } from 'class-validator';
+import { PurchaseStatus } from '../entities/purchase.entity';
 
-export class UpdatePurchaseDto extends PartialType(CreatePurchaseDto) {}
+export class UpdatePurchaseDto {
+  @ApiProperty({ enum: PurchaseStatus, required: false })
+  @IsEnum(PurchaseStatus)
+  @IsOptional()
+  status?: PurchaseStatus;
+
+  @ApiProperty({ required: false })
+  @IsString()
+  @IsOptional()
+  transactionId?: string;
+
+  @ApiProperty({ required: false })
+  @IsString()
+  @IsOptional()
+  shippingAddress?: string;
+}
