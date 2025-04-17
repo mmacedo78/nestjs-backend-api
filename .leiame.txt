@@ -7,10 +7,10 @@ nest g module user
 nest g service user --no-spec
 nest g controller user --no-spec
 
-nest g module users && nest g service users && nest g controller users
+nest g module user && nest g service user && nest g controller user
 
 # Usuarios - utilizar o gerador
-nest g res users --no-spec
+nest g res user --no-spec
 
 # Segurança JWT
 nest g module auth
